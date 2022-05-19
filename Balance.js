@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default function({hearts,totHearts}){
+export default function({amount}){
     return(
         <div style = {{"fontSize":20}}> 
             <div className = 'card'>
-                <div className = 'secondary'>
-                    Health: {hearts}/{totHearts}
+                <div className = 'third'>
+                    Balance: {amount}
                 </div>
             </div>
         </div>

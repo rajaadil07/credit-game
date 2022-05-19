@@ -1,17 +1,16 @@
 import React from 'react'
 import './Stats.css'
 import Hearts from './Hearts.js'
+import Balance from './Balance.js'
+import Button from './Button.js'
 export default function Stats() {
-    const handleClick = () =>{
-        console.log("Hello World");
-    }
+    
   return (
     <div className = 'Stats'>
         <h1 className ='card'> Banking For Good</h1>
+        <Balance balance = {1000}/>
         <Hearts hearts = {4} totHearts = {10}/>
-        <button onClick = {handleClick}> First Choice</button>
-        <button onClick = {handleClick}> Second Choice</button>
-        <button onClick = {handleClick}> Third Choice</button>
+        <Button/>
         <div> Make a Decision</div>
     </div>
   )
