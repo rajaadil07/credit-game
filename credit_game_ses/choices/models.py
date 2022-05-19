@@ -1,10 +1,12 @@
 from django.db import models
+from django.contrib.postgres.fields import ArrayField
 
 
 class Effect(models.Model):
     duration = models.IntegerField()
     value = models.IntegerField()
     description = models.TextField(max_length=255)
+    type = models.CharField(max_length=20)
 
 
 class Decision(models.Model):
@@ -15,4 +17,4 @@ class Decision(models.Model):
 
 class Choice(models.Model):
     description = models.CharField(max_length=200)
-    decisions = models.ForeignKey(Decision, on_delete=models.CASCADE)
+    decisions = models.ManyToManyField(Decision)
