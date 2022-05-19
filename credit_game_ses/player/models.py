@@ -17,8 +17,8 @@ class Player(models.Model):
     age = models.IntegerField()
     credit_score = models.IntegerField()
     money = models.FloatField()
-    house = reporter = models.ForeignKey(House, on_delete=models.CASCADE)
-    car = reporter = models.ForeignKey(Car, on_delete=models.CASCADE)
+    house = models.ForeignKey(House, on_delete=models.CASCADE)
+    car = models.ForeignKey(Car, on_delete=models.CASCADE)
     effects = ArrayField(ArrayField(models.IntegerField()))
 
 class Choice(models.Model):
