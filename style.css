@@ -1,0 +1,21 @@
+body {
+    border: 10px solid #D22E1E; 
+}
+
+.screenDiv {
+    display: flex;
+}
+
+.screens {
+    flex: 1;
+    border: 10px solid #D22E1E;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+    
+}  
+
+.screens:first-child {
+    margin-right: 20px;
+} 

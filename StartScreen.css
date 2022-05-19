@@ -1,0 +1,43 @@
+.imgDiv {
+    display: flex;
+}
+
+.img {
+    background-color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10px solid #D22E1E;
+}
+
+.buttonDiv button {
+    display: block;
+    padding: 10px 24px;
+}
+
+.buttonDiv {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.buttonDiv>.button:not(:last-child) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+   }
+
+/* .button  {
+    font: bold 11px Arial;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: #333333;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+} */
+
