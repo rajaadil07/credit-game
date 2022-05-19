@@ -6,13 +6,13 @@ class Effect(models.Model):
     duration = models.IntegerField()
     value = models.IntegerField()
     description = models.TextField(max_length=255)
-    type = models.CharField(max_length=20)
+    effect_type = models.CharField(max_length=20)
 
 
 class Decision(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(max_length=255)
-    effect = models.ForeignKey(Effect, on_delete=models.CASCADE)
+    effect = models.ManyToManyField(Effect)
 
 
 class Choice(models.Model):

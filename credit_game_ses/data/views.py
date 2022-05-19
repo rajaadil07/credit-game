@@ -32,9 +32,9 @@ def increment(request):
         return HttpResponse("OK")
 
     for effect in player.effects.all():
-        if effect.type == "money":
+        if effect.effect_type == "money":
             player.money += effect.value
-        elif effect.type == "credit":
+        elif effect.effect_type == "credit":
             player.credit += effect.value
         effect.duration -= 1
 
