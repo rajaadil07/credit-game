@@ -5,4 +5,3 @@ from .models import *
 admin.site.register(Car)
 admin.site.register(House)
 admin.site.register(Player)
-admin.site.register(Choice)

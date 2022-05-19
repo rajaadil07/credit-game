@@ -1,27 +1,28 @@
 from django.db import models
-from django.contrib.postgres.fields import ArrayField
+from choices.models import Effect
 
-# Create your models here.
-class Car(models.Model):
-    name = models.IntegerField()
-    price = models.FloatField()
-    description = models.TextField(max_length=255)
 
 class House(models.Model):
-    cost = models.FloatField()
-    description = models.TextField(max_length=255)
+    name = models.CharField(max_length=100)
+    description = models.IntegerField()
+    num_effect = models.ForeignKey(Effect, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
+
+class Car(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.IntegerField()
+    num_effect = models.ForeignKey(Effect, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
 
 class Player(models.Model):
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    age = models.IntegerField()
-    credit_score = models.IntegerField()
-    money = models.FloatField()
+    name = models.CharField(max_length=100)
+    money = models.IntegerField()
+    credit = models.IntegerField(max_length=850)
     house = models.ForeignKey(House, on_delete=models.CASCADE)
-    car = models.ForeignKey(Car, on_delete=models.CASCADE)
-    effects = ArrayField(ArrayField(models.IntegerField()))
-
-class Choice(models.Model):
-    name = models.CharField(max_length=255)
-    price = models.TextField(max_length=100)
-    decisions = ArrayField(ArrayField(models.IntegerField()))
+    interest = models.IntegerField(max_length=255)
