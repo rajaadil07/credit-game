@@ -1,15 +1,13 @@
 import React from 'react'
-import './App.css';
 import Stats from './Stats.js'
-
+import Hud from './Hud.js'
+import './App.css'
 function App() {
   return (
     <>
+    <h1 className ='App-header'> 
     <Stats/>
-    <button> First Choice</button>
-    <button> Second Choice</button>
-    <button> Third Choice</button>
-    <div> Make a Decision</div>
+    </h1>
     </>
   )
 }
