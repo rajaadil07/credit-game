@@ -1,7 +1,7 @@
 .Stats{
     font-family: "Press Start 2P", "PT Sans", Calibri, Tahoma, sans-serif;
     text-align: center; 
-    position: fixed;
+    position: absolute;
     top: 0%;
 }
 .Stats-header{
@@ -24,7 +24,22 @@
     background-color: rgb(61, 117, 118);
     border-radius: 5px;
     padding: 5px 10px 15px;
-    margin-top: 40px;
+    margin-top: 20px;
+}
+.link{
+    position:absolute;
+    bottom:10%;
+    text-align: center;
+    display: flex;
+    right:2%;
+    left:2%;
+    align-Items: center;
+    justify-Content: center;
+    font-family: "Press Start 2P", "PT Sans", Calibri, Tahoma, sans-serif;
+    background-color: rgb(61, 117, 118);
+    padding: 20px;
+    
+    
 }
 
 .primary{

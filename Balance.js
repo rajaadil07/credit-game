@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default function({amount}){
+export default function({balance}){
     return(
-        <div style = {{"fontSize":20}}> 
+        <div style = {{"fontSize":15}}> 
             <div className = 'card'>
                 <div className = 'third'>
-                    Balance: {amount}
+                    Balance: {balance}
                 </div>
             </div>
         </div>

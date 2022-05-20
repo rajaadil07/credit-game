@@ -12,13 +12,9 @@ export default function(){
         <div style = {{"fontSize":50}}> 
             <div className = 'Btn'>
                 <div className = 'Btn'>
-                    <button onClick = {handleClick}> First Choice</button>
+                    <button onClick = {handleClick}> Second Choice</button>
                 </div>
             </div>
         </div>
     )
 }
-
-
-
-        
