@@ -7,4 +7,6 @@ urlpatterns = [
     path('house-list/', views.houseList, name="house-list"),
     path('car-list/', views.carList, name="car-list"),
     path('increment/', views.increment, name="increment"),
+    path('stats-upload/<int:id>/', views.player_stats,name='stats-upload'),
+
 ]

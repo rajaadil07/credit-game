@@ -3,8 +3,7 @@ from django import forms
 
 
 class PlayerInfo(forms.ModelForm):
-    first_name = forms.CharField(max_length=30)
-    last_name = forms.CharField(max_length=30)
+    name = forms.CharField(max_length=100)
     age = forms.IntegerField()
     credit_score = forms.IntegerField()
     money = forms.IntegerField()
@@ -12,27 +11,22 @@ class PlayerInfo(forms.ModelForm):
 
     class Meta:
         model = Player
-        fields = ['first_name', 'last_name', 'age',
-                  'credit_score', 'interest', 'money']
+        fields = ['name','age','credit_score','money','interest']
 
 
 class HouseInfo(forms.ModelForm):
     name = forms.CharField(max_length=100)
-    description = forms.IntegerField()
-    num_effect = forms.IntegerField()
-    user = forms.IntegerField()
+    description = forms.CharField(max_length=255)
 
     class Meta:
         model = House
-        fields = ['name', 'description', 'num_effect', 'user']
+        fields = ['name', 'description']
 
 
 class CarInfo(forms.ModelForm):
     name = forms.CharField(max_length=100)
-    description = forms.IntegerField()
-    effects = forms.IntegerField()
-    user = forms.IntegerField()
+    description = forms.CharField(max_length=255)
 
     class Meta:
         model = Car
-        fields = ['name', 'description', 'effects', 'user']
+        fields = ['name', 'description']

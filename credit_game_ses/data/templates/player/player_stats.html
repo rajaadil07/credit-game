@@ -8,8 +8,9 @@
     <form method="POST">
         {% csrf_token %}
         <fieldset class='field-group'>
-            <legend class='border-bottom mb-4'>Please enter your personal information</legend>
-            {{ form|crispy  }}
+            <legend class='border-bottom mb-4'>Enter your Car & House Information</legend>
+            {{ house_form|crispy  }}
+            {{ car_form|crispy  }}
         </fieldset>
 
         <div class="form-group">
