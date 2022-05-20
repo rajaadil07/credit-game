@@ -1,28 +1,43 @@
-from django.http import HttpResponseNotAllowed, HttpResponse
-from django.shortcuts import render
-from .forms import *
-from .models import Player
-from math import floor
+from django.shortcuts import render, HttpResponse
+from django.http import HttpResponse, HttpResponseNotAllowed
+from .forms import PlayerInfo
+from .serializers import HouseSerializer, CarSerializer
+from .models import House, Car, Player
+
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
 # Create your views here.
 
 
 def player_information(request):
-    if request.method != "POST":
-        return HttpResponseNotAllowed(["POST"])
-
-    player_form = PlayerInfo(request.POST)
-    house_form = HouseInfo(request.POST)
-    car_form = CarInfo(request.POST)
-    if player_form.is_valid() and house_form.is_valid() and car_form.is_valid():
-        player_form.save()
-        house_form.save(commit=False)
-        car_form.save(commit=False)
-        id = request.get_clean_data()["id"]
+    if request.method == "POST":
+        player_form = PlayerInfo(request.POST)
+        if player_form.is_valid():
+            player_form.save()
 
     player_form = PlayerInfo()
-    print(player_form, house_form, car_form)
+
     return render(request, 'player/player_info.html', {'form': player_form})
+
+
+@api_view(['GET', 'POST'])
+def api_overview(request):
+    return Response("API Base Point", safe=False)
+
+
+@api_view(['GET', 'POST'])
+def houseList(request):
+    houses = House.objects.all()
+    serializer = HouseSerializer(houses, many=True)
+    return Response(serializer.data)
+
+
+@api_view(['GET', 'POST'])
+def carList(request):
+    cars = Car.objects.all()
+    serializer = CarSerializer(cars, many=True)
+    return Response(serializer.data)
 
 
 def increment(request):

@@ -1,0 +1,21 @@
+[
+    {
+      "model": "player.house",
+      "pk": 1,
+      "fields": {
+        "name": "Alabama",
+        "description": "Big Green house w/4 beds",
+        "num_effect": 1
+      }
+    },
+ 
+    {
+      "model": "player.car",
+      "pk": 1,
+      "fields": {
+        "name": "Toyota Corolla",
+        "description": "all wheel drive new car",
+        "num_effect": 2
+      }
+    }
+  ]
