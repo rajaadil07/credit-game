@@ -13,15 +13,15 @@ class Player(models.Model):
 
 class House(models.Model):
     #id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=100)
-    description = models.TextField()
+    house_name = models.CharField(max_length=100)
+    house_description = models.TextField()
     num_effect = models.ManyToManyField(Effect)
     user = models.ForeignKey(Player, on_delete=models.CASCADE)
 
 
 class Car(models.Model):
     #id = models.IntegerField(primary_key=True)
-    name = models.CharField(max_length=100)
-    description = models.TextField()
+    car_name = models.CharField(max_length=100)
+    car_description = models.TextField()
     effects = models.ManyToManyField(Effect)
     user = models.ForeignKey(Player, on_delete=models.CASCADE)

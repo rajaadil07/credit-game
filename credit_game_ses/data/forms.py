@@ -15,18 +15,18 @@ class PlayerInfo(forms.ModelForm):
 
 
 class HouseInfo(forms.ModelForm):
-    name = forms.CharField(max_length=100)
-    description = forms.CharField(max_length=255)
+    house_name = forms.CharField(max_length=100)
+    house_description = forms.CharField(max_length=255)
 
     class Meta:
         model = House
-        fields = ['name', 'description']
+        fields = ['house_name', 'house_description']
 
 
 class CarInfo(forms.ModelForm):
-    name = forms.CharField(max_length=100)
-    description = forms.CharField(max_length=255)
+    car_name = forms.CharField(max_length=100)
+    car_description = forms.CharField(max_length=255)
 
     class Meta:
         model = Car
-        fields = ['name', 'description']
+        fields = ['car_name', 'car_description']

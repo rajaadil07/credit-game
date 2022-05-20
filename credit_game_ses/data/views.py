@@ -7,6 +7,9 @@ from .models import House, Car, Player
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
+def thank_you(request):
+    return render(request,'player/thank_you.html')
+
 def player_information(request):
     if request.method == "POST":
         player_form = PlayerInfo(request.POST)
@@ -33,7 +36,7 @@ def player_stats(request,id):
             house_instance.save()
             car_instance.save()
 
-            return redirect('player-info')
+            return redirect('thank-you')
 
     house_form = HouseInfo()
     car_form = CarInfo()
