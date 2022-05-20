@@ -2,19 +2,19 @@ from rest_framework_json_api import serializers
 from .models import Choice, Decision, Effect
 
 
-class ChoiceSerializer(serializers.HyperlinkedModelSerializer):
+class ChoiceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Choice
-        fields = ('id', 'description', 'decisions')
+        fields = '__all__'
 
 
-class DecisionSerializer(serializers.HyperlinkedModelSerializer):
+class DecisionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Decision
-        fields = ('name', 'description', 'effect')
+        fields = '__all__'
 
 
-class EffectSerializer(serializers.HyperlinkedModelSerializer):
+class EffectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Effect
-        fields = ('duration', 'value', 'description', 'effect_type')
+        fields = '__all__'

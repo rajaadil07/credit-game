@@ -18,11 +18,9 @@ from django.urls import path, include
 from choices import views
 from rest_framework import routers
 
-router = routers.DefaultRouter()
-router.register(r'choices', views.ChoiceViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('choices/', include(router.urls)),
+    path('choices/', include('choices.urls')),
     path('data/', include('data.urls')),
 ]
