@@ -1,14 +1,17 @@
+from tkinter import W
 from django.shortcuts import render, redirect, HttpResponse
-from django.http import HttpResponse, HttpResponseNotAllowed
+from django.http import HttpResponse, HttpResponseNotAllowed, JsonResponse
 from .forms import *
-from .serializers import HouseSerializer, CarSerializer
+from .serializers import *
 from .models import House, Car, Player
 
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
+
 def thank_you(request):
-    return render(request,'player/thank_you.html')
+    return render(request, 'player/thank_you.html')
+
 
 def player_information(request):
     if request.method == "POST":
@@ -23,7 +26,8 @@ def player_information(request):
 
     return render(request, 'player/player_info.html', {'form': player_form})
 
-def player_stats(request,id): 
+
+def player_stats(request, id):
     if request.method == "POST":
         house_form = HouseInfo(request.POST)
         car_form = CarInfo(request.POST)
@@ -46,21 +50,23 @@ def player_stats(request,id):
 
 @api_view(['GET', 'POST'])
 def api_overview(request):
-    return Response("API Base Point", safe=False)
+    players = Player.objects.all()
+    serializer = PlayerSerializer(players, many=True)
+    return JsonResponse(serializer.data, safe=False)
 
 
 @api_view(['GET', 'POST'])
 def houseList(request):
     houses = House.objects.all()
     serializer = HouseSerializer(houses, many=True)
-    return Response(serializer.data)
+    return JsonResponse(serializer.data, safe=False)
 
 
 @api_view(['GET', 'POST'])
 def carList(request):
     cars = Car.objects.all()
     serializer = CarSerializer(cars, many=True)
-    return Response(serializer.data)
+    return JsonResponse(serializer.data, safe=False)
 
 
 def increment(request):
@@ -71,6 +77,7 @@ def increment(request):
 
     player.age += 1
     player.money += int(player.money * player.interest / 100)
+    player.money += 1000
 
     if len(player.effects.all()) is 0:
         player.save()
@@ -81,6 +88,13 @@ def increment(request):
             player.money += effect.value
         elif effect.effect_type == "credit":
             player.credit += effect.value
+        elif effect.effect_type == "interest":
+            player.interest += effect.value
+        elif effect.effect_type == "house":
+            player.house.set(House.objects.get(id=effect.value))
+        elif effect.effect_type == "car":
+            player.car.set(Car.objects.get(id=effect.value))
+
         effect.duration -= 1
 
     player.save()
