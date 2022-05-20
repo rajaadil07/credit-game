@@ -1,3 +1,36 @@
+<<<<<<< HEAD
+body {
+    border: 10px solid #D22E1E; 
+    font-family: "Press Start 2P", "PT Sans", Calibri, Tahoma, sans-serif;
+}
+
+.screenDiv {
+    display: flex;
+}
+
+.screens {
+    flex: 1;
+    border: 10px solid #D22E1E;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+    
+}  
+
+.screens:first-child {
+    margin-right: 20px;
+} 
+
+/* @font-face {
+    font-family: gameFont;
+    src: url(Retoro_Gaming.tff);
+}
+
+div {
+    font-family: gameFont;
+} */
+=======
 body {
     border: 10px solid #D22E1E; 
 }
@@ -19,3 +52,4 @@ body {
 .screens:first-child {
     margin-right: 20px;
 } 
+>>>>>>> 9bde5a2ab8d026650f5cf0d927c2b4638448991a
