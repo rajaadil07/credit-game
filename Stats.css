@@ -1,5 +1,8 @@
 .Stats{
-   text-align: center; 
+    font-family: "Press Start 2P", "PT Sans", Calibri, Tahoma, sans-serif;
+    text-align: center; 
+    position: fixed;
+    top: 0%;
 }
 .Stats-header{
     background-color: #61bdfb;
@@ -16,15 +19,26 @@
     margin: 0 auto;
 }
 .card{
+    text-align: center; 
+    font-family: "Press Start 2P", "PT Sans", Calibri, Tahoma, sans-serif;
     background-color: rgb(61, 117, 118);
     border-radius: 5px;
-    padding: 10px 20px 30px;
-    margin-top: 50px;
+    padding: 5px 10px 15px;
+    margin-top: 40px;
 }
 
 .primary{
+    font-family: "Press Start 2P", "PT Sans", Calibri, Tahoma, sans-serif;
     color : blue;
 }
 .secondary{
+    font-family: "Press Start 2P", "PT Sans", Calibri, Tahoma, sans-serif;
     color: #D22E1E;
+}
+.third{
+    font-family: "Press Start 2P", "PT Sans", Calibri, Tahoma, sans-serif;
+    color:white;
+}
+.fourth{
+    margin-top: 10px;
 }

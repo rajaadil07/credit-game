@@ -1,7 +1,8 @@
 
 /* CSS */
-.Btn{
-    color:aqua;
+.Btn button{
+    font-family: "Press Start 2P", "PT Sans", Calibri, Tahoma, sans-serif;
+    color: black;
 }
 
 
